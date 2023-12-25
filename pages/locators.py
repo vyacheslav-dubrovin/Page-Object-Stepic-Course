@@ -14,3 +14,10 @@ class LoginPageLocators():
     REGISTER_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
     REGISTER_PASSWORD_REPEAT = (By.CSS_SELECTOR, "#id_registration-password2")
     REGISTER_BUTTON = (By.NAME, "registration_submit")
+
+class ProductPageLocators():
+    ADD_TO_BASKET_BUTTON = (By.CLASS_NAME, "btn-add-to-basket")
+    PRODUCT_NAME = (By.XPATH, "/html/body/div[2]/div/div[2]/div[2]/article/div[1]/div[2]/h1")
+    PRODUCT_NAME_IN_MESSAGE = (By.XPATH, "/html/body/div[2]/div/div[1]/div[1]/div/strong")
+    PRICE = (By.XPATH, "/html/body/div[2]/div/div[2]/div[2]/article/div[1]/div[2]/p[1]")
+    SUM_PRICES = (By.XPATH, "/html/body/div[2]/div/div[1]/div[3]/div/p[1]/strong")
