@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPageLocators():
-    SIGN_IN_FORM = (By.CSS_SELECTOR, "#login_form > h2")
+    SIGN_IN_FORM = (By.XPATH, "/html/body/div[2]/div/div[2]/div[2]/div/div[1]/form/h2")
     SIGN_IN_EMAIL = (By.CSS_SELECTOR, "#id_login-username")
     SIGN_IN_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
     FORGOT_PASSWORD = (By.XPATH, "/html/body/div[2]/div/div[2]/div[2]/div/div[1]/form/p/a")
@@ -22,5 +22,13 @@ class ProductPageLocators():
     SUCCESS_MESSAGE = (By.XPATH, "/html/body/div[2]/div/div[1]/div[1]")
 
 class BasePageLocators():
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK = (By.ID, "login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+class MainPageLocators():
+    BASKET_BUTTON = (By.XPATH, "/html/body/header/div[1]/div/div[2]/span/a")
+
+class BasketPageLocators():
+    EMPTY_BASKET_TEXT = (By.XPATH, "/html/body/div[2]/div/div[3]/div[2]/p")
+    PRODUCT_IN_BASKET = (By.XPATH, "/html/body/div[2]/div/div[3]/div[2]/form/div/div")
