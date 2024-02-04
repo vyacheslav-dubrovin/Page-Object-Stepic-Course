@@ -20,7 +20,8 @@ links = ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?pr
 
 @pytest.mark.parametrize('link', links)
 @pytest.mark.xfail(reason="fixing this bug right now")
-def test_add_product_to_basket(browser, link):
+@pytest.mark.need_review
+def test_guest_add_product_to_basket(browser, link):
     page = ProductPage(browser, link)
     page.open(browser, link)
     page.add_product_to_basket()
@@ -56,12 +57,14 @@ def test_guest_should_see_login_link_on_product_page(browser, link):
     page.should_be_login_link()
 
 @pytest.mark.parametrize('link', links)
+@pytest.mark.need_review
 def test_guest_can_go_to_login_page_from_product_page(browser, link):
     page = ProductPage(browser, link)
     page.open(browser, link)
     page.go_to_login_page()
 
 @pytest.mark.parametrize('link', links)
+@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser, link):
     page  = ProductPage(browser, link)
     page.open(browser, link)
@@ -88,7 +91,8 @@ class TestUserAddToBasketFromProductPage():
 
     @pytest.mark.parametrize('link', links)
     @pytest.mark.xfail(reason="fixing this bug right now")
-    def test_add_product_to_basket(self, browser, link):
+    @pytest.mark.need_review
+    def test_user_add_product_to_basket(self, browser, link):
         page = ProductPage(browser, link)
         page.open(browser, link)
         page.add_product_to_basket()
